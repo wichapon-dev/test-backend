@@ -41,7 +41,6 @@ import { UserManagementModule } from './user-management/user-management.module';
       database: process.env.DATABASE_DATANAME,
       entities: [TbNew,TbRole,TbYear,TbRoom,TbComments,TbFiles,TbAdmin,TbLecturer,TbStudent],
       synchronize: true,
-    },
       driver: require('mysql2'), // เพิ่มบรรทัดนี้
     }),
     AuthModule,

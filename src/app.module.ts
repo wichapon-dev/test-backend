@@ -24,6 +24,7 @@ import { TbStudentModule } from './tb_student/tb_student.module';
 import { TbStudent } from './tb_student/entities/tb_student.entity';
 import { UserActivityModule } from './user-activity/user-activity.module';
 import { UserManagementModule } from './user-management/user-management.module';
+import * as fs from 'fs';
 
 @Module({
   imports: [
@@ -41,9 +42,9 @@ import { UserManagementModule } from './user-management/user-management.module';
       database: process.env.DATABASE_DATANAME,
       entities: [TbNew,TbRole,TbYear,TbRoom,TbComments,TbFiles,TbAdmin,TbLecturer,TbStudent],
       synchronize: true,
-       ssl: {
-    ca: fs.readFileSync('./certs/ca.pem').toString(),
-  },
+     ssl: {
+        ca: fs.readFileSync('./certs/ca.pem').toString(),
+      },
     }),
     AuthModule,
     TbRoleModule, 
